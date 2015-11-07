@@ -7,17 +7,15 @@
             <h1><a href="">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 07.11.20154, 12:10</p>
-            <h2><a href="">First German Post</a></h2>
-            <p>Hallo, ich bin Isabel Martinez, Ich komme aus Mexico. Ich arbeite bei SSI Schaefer als IT Software Developer. Ich liebe programmier.</p>
-        </div>
-
-        <div>
-            <p>published: 07.11.2015, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>This is the second post, I won't tell anything relevant, have a nice day.</p>
-        </div>
+       
+        	{% for post in posts %}
+        	<div>
+        		<p>published:{{ post.publised_date }}</p>
+        		<h1><a href="">{{ post.title }}</a></h1>
+        		<p>{{ post.text|linebreaks }}<p>
+        	</div>
+        	{% endfor %}
+       
     </body>
 </html>
 
